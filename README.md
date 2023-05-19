@@ -1,9 +1,10 @@
-# LeagueOfLegends
+## League of Legends
+# Competitive Matches Analysis
 
-
+---
 
 ## Introduction
-
+---
 
 In this short website, I would like to explore the competitve matches in League of Legends.
 
@@ -15,9 +16,10 @@ In an attempt to find whether team gold at then end is a factor that determines 
 
 
 ## Cleaning and EDA
+---
+
 
 ### Data Cleaning
-
 | gameid                |   gamelength |   totalgold | victory   |
 |:----------------------|-------------:|------------:|:----------|
 | ESPORTSTMNT01_2690210 |         1713 |       47070 | False     |
@@ -26,13 +28,15 @@ In an attempt to find whether team gold at then end is a factor that determines 
 | ESPORTSTMNT01_2690219 |         2114 |       71004 | True      |
 | 8401-8401_game_1      |         1365 |       45468 | True      |
 
+### Univariate Analysis
+<iframe src="assets/univariate2" width=550 height=500 frameBorder=0></iframe>
 
 
-<iframe src="assets/univariate2" width=650 height=500 frameBorder=0></iframe>
+### Bivariate Analysis
+<iframe src="assets/bivariate" width=550 height=500 frameBorder=0></iframe>
 
 
-
-
+### Interesting Aggregates
 |   gamelength |   totalgold |
 |-------------:|------------:|
 |      1895.91 |     51960.7 |
@@ -47,13 +51,19 @@ In an attempt to find whether team gold at then end is a factor that determines 
 ---
 
 ## Assessment of Missingness
-
+---
 If we examine the csv file, I believe that the columns such as doublekills, tripleskills, quadrakills, and pentakills is NMAR. While some people recorded those unoccurred events as zero, I believe that they also recorded nothing (missing value) for when the event did not occur. The total number of doublekills, tripleskills, quadrakills, and pentakills per team (no need for player), can help us get an explaination. This will make it MAR if no occurrence is the reason for missing value.
+
+<iframe src="assets/league by missingness of teamname" width=550 height=500 frameBorder=0></iframe>
+<iframe src="assets/empirical distrubution of the tvd1" width=550 height=500 frameBorder=0></iframe>
+<iframe src="assets/league by missingness of teamname" width=550 height=500 frameBorder=0></iframe>
+<iframe src="assets/empirical distrubution of the tvd2" width=550 height=500 frameBorder=0></iframe>
+
 
 ---
 
 ## Hypothesis Testing
-
-hello
+---
+<iframe src="assets/empirical distrubution of the mean difference" width=550 height=500 frameBorder=0></iframe>
 
 ---
