@@ -4,6 +4,8 @@
 
 ## Introduction
 
+---
+
 In this short website, I would like to explore the competitve matches in League of Legends.
 
 In League of Legends, having gold often helps the player to further have an item advantage over the opponent. However, it is not only gold that wins the game. There are also skills and strategy to this game. The players understanding and knowledge of opponent Champions, team strategy, Champion controlling skills, getting other objectives, etc. all contribute to how a team can win a game.
@@ -13,11 +15,12 @@ In an attempt to find whether team gold at then end is a factor that determines 
 ---
 
 ## Cleaning and EDA
-
+<iframe src="assets/univariate2" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
-##Assessment of Missingness
+## Assessment of Missingness
+
 If we examine the csv file, I believe that the columns such as doublekills, tripleskills, quadrakills, and pentakills is NMAR. While some people recorded those unoccurred events as zero, I believe that they also recorded nothing (missing value) for when the event did not occur. The total number of doublekills, tripleskills, quadrakills, and pentakills per team (no need for player), can help us get an explaination. This will make it MAR if no occurrence is the reason for missing value.
 
 
