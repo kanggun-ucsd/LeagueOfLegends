@@ -1,10 +1,10 @@
 # LeagueOfLegends
+## Competitive Matches Analysis
 
----
 
-## Introduction
 
----
+### Introduction
+
 
 In this short website, I would like to explore the competitve matches in League of Legends.
 
@@ -14,8 +14,8 @@ In an attempt to find whether team gold at then end is a factor that determines 
 
 ---
 
-## Cleaning and EDA
-<iframe src="assets/univariate2" width=700 height=500 frameBorder=0></iframe>
+### Cleaning and EDA
+<iframe src="assets/univariate2" width=650 height=500 frameBorder=0></iframe>
 
 | gameid                |   gamelength |   totalgold | victory   |
 |:----------------------|-------------:|------------:|:----------|
@@ -37,13 +37,13 @@ In an attempt to find whether team gold at then end is a factor that determines 
 | False     |      1895.91 |     51960.7 |
 | True      |      1896.14 |     61939.7 |
 
-## Assessment of Missingness
+### Assessment of Missingness
 
 If we examine the csv file, I believe that the columns such as doublekills, tripleskills, quadrakills, and pentakills is NMAR. While some people recorded those unoccurred events as zero, I believe that they also recorded nothing (missing value) for when the event did not occur. The total number of doublekills, tripleskills, quadrakills, and pentakills per team (no need for player), can help us get an explaination. This will make it MAR if no occurrence is the reason for missing value.
 
 
 ---
 
-## Hypothesis Testing
+### Hypothesis Testing
 
 hello
