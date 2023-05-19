@@ -16,12 +16,26 @@ In an attempt to find whether team gold at then end is a factor that determines 
 
 ## Cleaning and EDA
 <iframe src="assets/univariate2" width=700 height=500 frameBorder=0></iframe>
-'| gameid                |   gamelength |   totalgold | victory   |\n|:----------------------|-------------:|------------:|:----------|\n| ESPORTSTMNT01_2690210 |         1713 |       47070 | False     |\n| ESPORTSTMNT01_2690210 |         1713 |       52617 | True      |\n| ESPORTSTMNT01_2690219 |         2114 |       57629 | False     |\n| ESPORTSTMNT01_2690219 |         2114 |       71004 | True      |\n| 8401-8401_game_1      |         1365 |       45468 | True      |'
+
+| gameid                |   gamelength |   totalgold | victory   |
+|:----------------------|-------------:|------------:|:----------|
+| ESPORTSTMNT01_2690210 |         1713 |       47070 | False     |
+| ESPORTSTMNT01_2690210 |         1713 |       52617 | True      |
+| ESPORTSTMNT01_2690219 |         2114 |       57629 | False     |
+| ESPORTSTMNT01_2690219 |         2114 |       71004 | True      |
+| 8401-8401_game_1      |         1365 |       45468 | True      |
 
 
+|   gamelength |   totalgold |
+|-------------:|------------:|
+|      1895.91 |     51960.7 |
+|      1896.14 |     61939.7 |
 
-'|   gamelength |   totalgold |\n|-------------:|------------:|\n|      1895.91 |     51960.7 |\n|      1896.14 |     61939.7 |'
----
+
+| victory   |   gamelength |   totalgold |
+|:----------|-------------:|------------:|
+| False     |      1895.91 |     51960.7 |
+| True      |      1896.14 |     61939.7 |
 
 ## Assessment of Missingness
 
