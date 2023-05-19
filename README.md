@@ -15,7 +15,7 @@ In an attempt to find whether team gold at then end is a factor that determines 
 ---
 
 ## Cleaning and EDA
-<iframe src="assets/univariate2" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/univariate2" width=650 height=500 frameBorder=0></iframe>
 
 ---
 
