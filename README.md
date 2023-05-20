@@ -39,14 +39,12 @@ Here is the head of the cleaned dataframe:
 ### Univariate Analysis
 
 The distrubution of total gold enable us to see that most teams ends the game when they have 56.6725k gold. We can also see that there are lot more outlier as the amount of gold get higher (more than 86.301k is considered an outlier). 
-
 <iframe src="assets/univariate2" width=500 height=400 frameBorder=0></iframe>
 
 
 ### Bivariate Analysis
 
 The distrubution of total gold based on whether a team wins or not is shown in this bivariate analysis. We are able to see that the team that got the victory ends of on average with more gold than the team who lost the match.
-
 <iframe src="assets/bivariate" width=500 height=400 frameBorder=0></iframe>
 
 
@@ -106,14 +104,8 @@ The observed_tvd of these two columns is 0.055495292809984886, with the p-value 
 **alternate hypothesis:** In competitve league of legend, winning team has higher total gold at the end of the game than losing team.
 
 We need to figure out whehter the two samples (winning team and losing team) come from the same sample. In order to do so, I will be doing a permutation test with 500 repetition, shuffling the 'totalgold' column then computing the difference of means. Then I will be comparing the observed differences to differences computed from the permutation test. 
-
 <iframe src="assets/empirical distrubution of the mean difference" width=500 height=400 frameBorder=0></iframe>
 
 With the observed difference of about 9978.96 total gold and a p-value of 0.0, we can reject the null hypothesis.
-
-
-
-
-
 
 ---
