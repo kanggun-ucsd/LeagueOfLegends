@@ -57,7 +57,7 @@ Regardless of whether the match is won or less, on average the game length is si
 | False     |      1895.91 |     51960.7 |
 | True      |      1896.14 |     61939.7 |
 
----
+
 
 
 ## Assessment of Missingness
@@ -68,9 +68,7 @@ If we examine the csv file, I believe that the columns such as doublekills, trip
 
 
 ### Missingness Dependency
-
-**Because my cleaned data does not any missing value, I will be picking 'teamname' column for this section of the project.**
-
+Because my cleaned data does not any missing value, I will be picking 'teamname' column for this section of the project.
 
 **Comparing null and non-null 'teamname' distrubution for 'league'**
 
