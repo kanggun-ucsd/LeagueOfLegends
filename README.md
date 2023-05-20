@@ -22,6 +22,10 @@ In an attempt to find whether team gold at is a factor that is related to the ga
 
 ### Data Cleaning
 
+First thing I needed to have was data that only consisted of rows of team. I noticed that the 'position' column has not only tells the position of individual players role in the game but also indicates team states. So I queried so that I only have rows that have 'position' equal to the string 'team'. Then I just pulled those four columns out. I checked for missing values and it seems like there is none.
+
+Here is the head of the cleaned dataframe:
+
 | gameid                |   gamelength |   totalgold | victory   |
 |:----------------------|-------------:|------------:|:----------|
 | ESPORTSTMNT01_2690210 |         1713 |       47070 | False     |
@@ -33,20 +37,22 @@ In an attempt to find whether team gold at is a factor that is related to the ga
 
 
 ### Univariate Analysis
+
+The distrubution of total gold enable us to see that most teams ends the game when they have 56.6725k gold. We can also see that there are lot more outlier as the amount of gold get higher (more than 86.301k is considered an outlier). 
+
 <iframe src="assets/univariate2" width=500 height=400 frameBorder=0></iframe>
 
 
 ### Bivariate Analysis
+
+The distrubution of total gold based on whether a team wins or not is shown in this bivariate analysis. We are able to see that the team that got the victory ends of on average with more gold than the team who lost the match.
+
 <iframe src="assets/bivariate" width=500 height=400 frameBorder=0></iframe>
 
 
 ### Interesting Aggregates
 
-|   gamelength |   totalgold |
-|:-------------|------------:|
-|      1895.91 |     51960.7 |
-|      1896.14 |     61939.7 |
-
+Regardless of whether the match is won or less, on average the game length is similar to one another. Here we can see that the total gold is higher once again.
 
 | victory   |   gamelength |   totalgold |
 |:----------|:------------:|------------:|
@@ -57,12 +63,37 @@ In an attempt to find whether team gold at is a factor that is related to the ga
 
 
 ## Assessment of Missingness
+
+### NMAR Analysis
+
 If we examine the csv file, I believe that the columns such as doublekills, tripleskills, quadrakills, and pentakills is NMAR. While some people recorded those unoccurred events as zero, I believe that they also recorded nothing (missing value) for when the event did not occur. The total number of doublekills, tripleskills, quadrakills, and pentakills per team (no need for player), can help us get an explaination. This will make it MAR if no occurrence is the reason for missing value.
 
+
+### Missingness Dependency
+
+**Because my cleaned data does not any missing value, I will be picking 'teamname' column for this section of the project.**
+
+
+**Comparing null and non-null 'teamname' distrubution for 'league'**
+
 <iframe src="assets/league by missingness of teamname" width=500 height=400 frameBorder=0></iframe>
+
+Based on this this figure, 'league by missingness of teamname', we can see that there is one league that has team name missing. Let us try to a simulation with 500 repetition by shuffling the 'league' column to make sure determine if it is significant. We will compute the TVD for each shuffle than compare it to the observed TVD.
+
 <iframe src="assets/empirical distrubution of the tvd1" width=500 height=400 frameBorder=0></iframe>
+
+With the observed_tvd of 0.48543650315375036, the p-value is 0.0. So we can reject the null hypothesis, meaning that columns 'teamname' is MAR dependent on column 'league'.
+
+
+**Comparing null and non-null 'teamname' distrubution for 'result'**
+
 <iframe src="assets/league by missingness of teamname" width=500 height=400 frameBorder=0></iframe>
+
+Unlike the previous column's distrubution against 'teamname' missingness, we can't get any idea of what is happenning just by looking at this graph. However, once again let us do a simulation with 500 repetition. We will be shuffling the 'result' columns, compute the TVDs of each shuffles, then compare it to the observed TVD.
+
 <iframe src="assets/empirical distrubution of the tvd2" width=500 height=400 frameBorder=0></iframe>
+
+The observed_tvd of these two columns is 0.055495292809984886, with the p-value is 0.592. We failed to reject the null, which means that the column 'teamname' does not depend on the column 'result'.
 
 
 ---
@@ -74,6 +105,15 @@ If we examine the csv file, I believe that the columns such as doublekills, trip
 
 **alternate hypothesis:** In competitve league of legend, winning team has higher total gold at the end of the game than losing team.
 
+We need to figure out whehter the two samples (winning team and losing team) come from the same sample. In order to do so, I will be doing a permutation test with 500 repetition, shuffling the 'totalgold' column then computing the difference of means. Then I will be comparing the observed differences to differences computed from the permutation test. 
+
 <iframe src="assets/empirical distrubution of the mean difference" width=500 height=400 frameBorder=0></iframe>
+
+With the observed difference of about 9978.96 total gold and a p-value of 0.0, we can reject the null hypothesis.
+
+
+
+
+
 
 ---
